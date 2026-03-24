@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img" aria-labelledby="title">
+  <title id="title">Organizer placeholder</title>
+  <rect width="300" height="300" fill="#eef7ff"/>
+  <circle cx="150" cy="115" r="55" fill="#c3ddf7"/>
+  <path d="M70 255c16-50 55-80 80-80s64 30 80 80" fill="#c3ddf7"/>
+  <text x="150" y="282" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#1e5a99">Organizer</text>
+</svg>
