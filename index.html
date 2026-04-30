@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>The 2nd SeT-LLM Workshop on Secure and Trustworthy Large Language Models — KDD 2026 Workshop</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <title>SeT-LLM 2026 — Secure and Trustworthy Large Language Models | KDD Workshop</title>
+  <meta name="description" content="SeT-LLM 2026 @ KDD 2026 (Jeju): workshop on security, trustworthiness, and safety of LLMs. CFP, schedule, organizers.">
+  <meta name="keywords" content="SeT-LLM, KDD 2026, workshop, secure, trustworthy, LLM, safety, Jeju">
 
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts: DM Sans + Sora + Instrument Serif (nav wordmark) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital,wght@0,400;0,600;1,400&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <!-- =======================================================
+  * Template Name: TheEvent
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
   <style>
-    :root {
-      --light-blue: #f0f8ff;
-      --link: #1e5a99;
-      --link-hover: #0d3d6b;
+    .card {
+      background: none;
+      border: none;
     }
 
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--light-blue);
-      font-family: "Palatino Linotype", "Book Antiqua", Palatino, "URW Palladio L", "EB Garamond", serif;
-      color: #111;
+    .card-body {
+      padding: 0.5rem;
+      text-align: center;
     }
 
-    a { color: var(--link); }
-    a:hover { color: var(--link-hover); text-decoration: none; }
-
-    strong { font-weight: 600; }
-    .lead { font-size: 1.05rem; }
-    .container { max-width: 1000px; }
-
-    .card { background: none; border: none; }
-    .card-body { padding: 0.5rem; text-align: center; }
-    .speaker-img,
     .organizer-img {
       width: 100%;
       max-width: 200px;
@@ -42,7 +52,6 @@
       margin: 0 auto;
     }
 
-    .speaker-name,
     .organizer-name {
       display: block;
       margin-top: 0.4rem;
@@ -62,20 +71,6 @@
       max-width: 220px;
     }
 
-    .navbar {
-      background-color: #e6f3ff;
-      border-bottom: 1px solid #b8d9f5;
-    }
-
-    .navbar .navbar-brand,
-    .navbar .nav-link {
-      color: #111;
-    }
-
-    .navbar .nav-link:hover {
-      color: #444;
-    }
-
     .clickable-image img {
       display: block;
       border: none;
@@ -86,306 +81,449 @@
       filter: brightness(1.08);
     }
 
-    .reviewers-section {
-      background: #e6f2ff;
-      border-top: 1px solid #b8d9f5;
-      padding: 3rem 0;
-    }
-
-    .reviewers-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    .reviewers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .reviewer-name {
-      padding: 0.15rem;
-      background: white;
-      border: 1px solid #b8d9f5;
-      border-radius: 2px;
-      text-align: center;
-      font-size: 0.95rem;
-      transition: all 0.2s ease;
-    }
-
-    .reviewer-name:hover {
-      background: var(--light-blue);
-      border-color: #85bfe8;
-      transform: translateY(-1px);
-      box-shadow: 0 2px 4px rgba(30, 90, 153, 0.1);
-    }
-
-    .reviewers-section h2 {
-      text-align: center;
-      margin-bottom: 0.5rem;
-    }
-
-    .reviewers-section .subtitle {
-      text-align: center;
-      color: #666;
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
-
     @media (max-width: 576px) {
-      .speaker-name,
       .organizer-name {
         white-space: normal;
       }
     }
   </style>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">SeT-LLM 2026</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#call">Call for Papers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#organizers">Organizers</a></li>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center ">
+    <div class="container-fluid container-xxl d-flex align-items-center">
+
+      <div id="logo" class="me-auto">
+        <a href="index.html" class="scrollto logo-wordmark-link" aria-label="SeT-LLM 2026 — Home">
+          <span class="logo-wordmark">SeT-LLM</span>
+        </a>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
+          <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
+          <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#accepted-paper">Accepted Papers</a></li> -->
+          <li><a class="nav-link scrollto" href="#organizers">Organizers</a></li>
         </ul>
-      </div>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
     </div>
-  </nav>
+  </header><!-- End Header -->
 
-  <section class="text-center py-5" id="about" style="margin-top:70px;">
-    <div class="container">
-      <h1 class="display-4">Secure and Trustworthy Large Language Models</h1>
-      <h3><strong>Workshop @ KDD 2026</strong></h3>
-      <br>
-      <p class="lead"><em>Jeju, Korea</em> &nbsp;&nbsp;|&nbsp;&nbsp; Workshop date TBA during August 9-13, 2026</p>
-    </div>
-    <br>
-    <div class="container">
-      <div style="max-width:900px;margin:0 auto;text-align:left;">
-        <p class="lead">
-          Large language models are increasingly used in search, software engineering, scientific discovery,
-          customer support, education, healthcare, and agentic systems. As these systems are deployed in more
-          consequential settings, concerns about <strong>security, privacy, robustness, faithfulness, and safety</strong>
-          become substantially more important. Failures such as prompt injection, jailbreaks, privacy leakage,
-          hallucination, insecure tool use, and unreliable long-horizon behavior can create real downstream harm.
-        </p>
-
-        <p class="lead">
-          The SeT-LLM workshop focuses on the foundations and practice of building <strong>secure and trustworthy
-          large language models</strong>. We aim to bring together researchers and practitioners from data mining,
-          machine learning, natural language processing, systems, security, human-computer interaction, and
-          applied domains to examine how LLMs can be evaluated, stress-tested, aligned, and deployed more responsibly.
-        </p>
-
-        <p class="lead">
-          The 2nd SeT-LLM Workshop will provide a venue for discussion on rigorous benchmarks, red teaming,
-          privacy-preserving methods, trustworthy inference, robust agent design, and responsible applications of
-          LLMs in high-stakes environments. Our goal is to advance technically grounded and practically useful
-          approaches to dependable generative AI.
-        </p>
-
-        <h4 class="mt-4 mb-3"><strong>Workshop Goals</strong></h4>
-        <p class="lead">The workshop aims to foster a shared research agenda around secure and trustworthy LLMs. We focus on:</p>
-        <ul class="lead">
-          <li><strong>Understanding failure modes</strong> in modern LLM systems, including security, safety, and privacy risks</li>
-          <li><strong>Developing rigorous evaluations</strong> for reliability, faithfulness, robustness, and trustworthiness</li>
-          <li><strong>Connecting deployment practice with research</strong> across alignment, governance, and high-stakes applications</li>
-        </ul>
-      </div>
-    </div>
-    <br>
-    <div class="container">
-      <div class="banner-wrapper">
-        <img src="./banner/setllm-banner.svg" class="img-fluid w-80 d-block" alt="SeT-LLM 2026 workshop banner">
-      </div>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="200">
+      <h1 class="mb-4 pb-0" style="text-transform: none;">
+        SeT-LLM 2026<br>
+        <span style="font-size: 0.82em; font-weight: 500;">Secure and Trustworthy Large Language Models</span>
+      </h1>
+      <p style="font-size: 1.05rem; font-weight: 600; color: rgba(255, 255, 255, 0.93); max-width: 44rem; margin: 0 auto; line-height: 1.45;">
+      <!-- <p style="font-size: 1.05rem; font-weight: 600; color: rgba(255, 255, 255, 0.93); max-width: 44rem; margin: 0 auto; line-height: 1.45;"> -->
+        KDD 2026 · 9–13 August · Jeju, Republic of Korea </p>
     </div>
   </section>
+  <!-- End Hero Section -->
 
-  <section class="py-5" id="call">
-    <div class="container lead">
-      <h2 class="text-center mb-4">Call for Papers</h2>
-      <p>
-        We invite submissions on secure and trustworthy large language models from data mining, machine learning,
-        NLP, security, systems, HCI, and interdisciplinary application domains. The workshop welcomes both
-        <strong>technical innovations and deployment-centered insights</strong> across the following research areas:
-      </p>
-      <ul>
-        <li><strong>LLM Security:</strong> Prompt injection, jailbreaks, adversarial prompting, model stealing, secure tool use, and robust agent architectures.</li>
-        <li><strong>Trustworthy Evaluation:</strong> Auditing, benchmarking, calibration, uncertainty estimation, faithfulness, and risk-sensitive evaluation methodologies.</li>
-        <li><strong>Privacy and Data Protection:</strong> Memorization, privacy leakage, data governance, secure fine-tuning, and privacy-preserving inference.</li>
-        <li><strong>Robustness and Reliability:</strong> Distribution shift, long-context failure, retrieval robustness, dependable reasoning, and resilient multi-agent behavior.</li>
-        <li><strong>Alignment and Safety:</strong> Harm mitigation, policy compliance, value alignment, controllability, and safe deployment strategies.</li>
-        <li><strong>Applications and Case Studies:</strong> Healthcare, science, education, legal reasoning, public-sector use, enterprise systems, and other high-stakes settings.</li>
-      </ul>
-      <p>Submissions may report new results, benchmarks, system designs, negative findings, or position papers.</p>
+  <main id="main">
 
-      <h3 class="mt-4">Submission Guidelines</h3>
-      <p>We expect to welcome submissions in several formats. Final submission instructions will be posted once the workshop CFP is finalized.</p>
-      <ul>
-        <li><strong>Long papers:</strong> for original research, comprehensive studies, or position papers.</li>
-        <li><strong>Short papers:</strong> for focused contributions, preliminary findings, or negative results.</li>
-        <li><strong>Demo or system papers:</strong> for tools, platforms, datasets, and practical systems.</li>
-        <li><strong>Extended abstracts:</strong> for work-in-progress and discussion-oriented submissions.</li>
-      </ul>
-
-      <p><strong>Formatting requirements:</strong></p>
-      <ul>
-        <li>Submission format and style file requirements: <a href="https://www.overleaf.com/latex/templates/association-for-computing-machinery-acm-sig-proceedings-template/bmvfhcdnxfty" target="_blank">link</a> </li>
-        <li>Submit a <u>single PDF</u></li>
-        <!-- <li>Anonymization policy: TBA</li> -->
-        <!-- <li>Archival status and presentation format: TBA</li> -->
-      </ul>
-
-      <h3 class="mt-4">Important Dates</h3>
-      <ul>
-        <!-- <li><strong>Submission opens:</strong> TBA</li> -->
-        <li><strong>Submission deadline:</strong> June 01, 2026</li>
-        <li><strong>Notification of decisions:</strong> July 01, 2026</li>
-        <li><strong>Camera-ready deadline:</strong> July 10, 2026</li>
-        <li><strong>Workshop:</strong> TBA during KDD 2026 in Jeju, Korea</li>
-        <li><strong>Conference dates:</strong> August 9-13, 2026</li>
-        <li><strong>Submission link:</strong> <a href="https://openreview.net/group?id=KDD.org/2026/Workshop/SeT-LMM" target="_blank">OpenReview Submission Portal</a></li>
-
- 
-
-      </ul>
-      <p class="mb-0">
-        Archival status and presentation format will be updated once finalized. Questions? Contact us at
-        <a href="mailto:setllm.workshop@gmail.com">setllm.workshop@gmail.com</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="py-5 bg-light" id="speakers">
-    <div class="container">
-      <h2 class="text-center mb-4">Invited Speakers</h2>
-      <div class="flex-row-wrap">
-        <div class="card speaker-card">
-          <a href="#" class="clickable-image">
-            <img src="./speakers/xlz.jpg" alt="Xiangliang Zhang" class="speaker-img">
-          </a>
-          <div class="card-body">
-            <span class="speaker-name">Xiangliang Zhang</span>
-            <small>University of Notre Dame</small>
-          </div>
-        </div>
-        <div class="card speaker-card">
-          <a href="#" class="clickable-image">
-            <img src="./speakers/tba-speaker.svg" alt="Speaker to be announced" class="speaker-img">
-          </a>
-          <div class="card-body">
-            <span class="speaker-name">Speaker To Be Announced</span>
-            <small>Affiliation</small>
-          </div>
-        </div>
-        <div class="card speaker-card">
-          <a href="#" class="clickable-image">
-            <img src="./speakers/tba-speaker.svg" alt="Speaker to be announced" class="speaker-img">
-          </a>
-          <div class="card-body">
-            <span class="speaker-name">Speaker To Be Announced</span>
-            <small>Affiliation</small>
-          </div>
-        </div>
-        <div class="card speaker-card">
-          <a href="#" class="clickable-image">
-            <img src="./speakers/tba-speaker.svg" alt="Speaker to be announced" class="speaker-img">
-          </a>
-          <div class="card-body">
-            <span class="speaker-name">Speaker To Be Announced</span>
-            <small>Affiliation</small>
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container position-relative" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>About the Workshop</h2>
+            <p style="font-size: 18px;">
+              Large Language Models (LLMs) are increasingly embedded as core components of modern data-centric systems, supporting tasks such as data exploration, analytics, decision support, and automated reasoning over large-scale and heterogeneous datasets. While recent advances have significantly expanded the capabilities of LLM-powered systems, their deployment in real open-world environments has exposed fundamental security and trustworthiness challenges.
+            </p>
+            <p style="font-size: 18px;">
+              We invite researchers and practitioners to submit papers to <strong>SeT-LLM&nbsp;'26</strong>, which aims to identify these emerging challenges, discuss novel solutions, and explore constructive perspectives across the full theory–algorithm–application stack, including reliability assurance and evaluation, privacy leakage and copyright protection, interpretability and plagiarism detection, secure deployment, backdoor and adversarial attacks and defenses, toxic content mitigation, and new learning and interaction paradigms for LLM-powered systems.
+              The workshop will be held in person on <strong>KDD 2026</strong> (9–13 August 2026) in <strong>Jeju Island, Republic of Korea</strong>. 
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- End About Section -->
 
-  <section class="py-5" id="organizers">
-    <div class="container">
-      <h2 class="text-center mb-4">Organizers</h2>
-      <div class="flex-row-wrap">
-        <div class="card organizer-card">
-          <a href="#" class="clickable-image">
-            <img src="./organizers/ll.jpg" alt="Lu Lin" class="organizer-img">
-          </a>
-          <div class="card-body">
-            <span class="organizer-name">Lu Lin</span>
-            <small>Penn State University</small>
-          </div>
+    <section id="cfp" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Call for Papers</h2>
         </div>
-        <div class="card organizer-card">
-          <a href="#" class="clickable-image">
-            <img src="./organizers/jhc.jpg" alt="Jinghui Chen" class="organizer-img">
-          </a>
-          <div class="card-body">
-            <span class="organizer-name">Jinghui Chen</span>
-            <small>Penn State University</small>
+    
+        <div class="cfp-block cfp-block--topics">
+          <h3>Topics of Interest</h3>
+          <p class="cfp-body">
+            We invite submissions on topics including, but not limited to:
+          </p>
+          <ol>
+            <li><strong>Security</strong>: prompt injection, jailbreaks, adversarial prompting, model stealing, unsafe tool use, and robust defense mechanisms in LLM development and deployment.</li>
+            <li><strong>Trustworthy Assurance and Evaluation</strong>: benchmarks, auditing, uncertainty estimation, calibration, uncertainty estimation, and risk-sensitive evaluation methodologies.</li>
+            <li><strong>Privacy and Data Protection:</strong> memorization, privacy leakage, data governance, secure fine-tuning, and privacy-preserving inference.</li>
+            <li><strong>Robustness and Reliability:</strong> Distribution shift, long-context failure, retrieval robustness, dependable reasoning, and resilient multi-agent behavior.</li>
+            <li><strong>Alignment and Safety:</strong> Harm mitigation, policy compliance, value alignment, controllability, and safe deployment strategies.</li>
+          <li><strong>Applications and Case Studies:</strong> Healthcare, science, education, legal reasoning, public-sector use, enterprise systems, and other high-stakes settings.</li>
+          </ol>
+        </div><!-- /.cfp-block--topics -->
+
+        <div class="cfp-block cfp-block--dates">
+            <h3>Important Dates</h3>
+            <ul class="cfp-dates-list">
+              <li>
+                <span class="date-label">Paper submission deadline</span>
+                <span class="date-value">01&nbsp;June&nbsp;2026 (AOE)</span>
+              </li>
+              <li>
+                <span class="date-label">Notification of decision</span>
+                <span class="date-value">01&nbsp;July&nbsp;2026 (AOE)</span>
+              </li>
+              <li>
+                <span class="date-label">Camera-ready submission</span>
+                <span class="date-value">10&nbsp;July&nbsp;2026 (AOE)</span>
+              </li>
+              <li>
+                <span class="date-label">Workshop time</span>
+                <span class="date-value">TBD during 9-10&nbsp;August&nbsp;2026 (Jeju Time, GMT+9)</span>
+              </li>
+            </ul>
           </div>
+          </li>
+    
+        <div class="cfp-block">
+          <h3>Submission Information</h3>
+    
+          <p class="cfp-body">
+            <strong>Submission link:</strong>
+            Papers should be submitted via
+            <a href="https://openreview.net/group?id=KDD.org/2026/Workshop/SeT-LMM" target="_blank" rel="noopener">this OpenReview site</a>.
+          </p>
+          
+          <p class="cfp-body">
+            <strong>Format:</strong>
+            Submissions should follow the ACM two-column conference proceedings format (with <a href="https://www.overleaf.com/latex/templates/association-for-computing-machinery-acm-sig-proceedings-template/bmvfhcdnxfty" target="_blank" rel="noopener">ACM Template</a> available on Overleaf).
+            Submissions are limited to 4 pages for main contents with unlimited reference and appendix pages. The accepted submissions are allowed with 1 additional page (5 pages in total for main contents) for the camera ready version.
+          </p>
+    
+          
+          <p class="cfp-body">
+            <strong>Policies: </strong>
+            SeT-LLM&nbsp;'26 follows a double-blind review process.
+            Submitted manuscripts should be anonymized with identifying information removed. Submissions that are concurrently under review at other venues are acceptable. All accepted papers are non-archival, and will be made publicly available on the workshop website without an official proceeding. 
+          </p>
+    
+          <p class="cfp-body">
+            <strong>Reviewer recruitment: </strong>
+            If you are interested in reviewing submissions, please fill out
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd835NIPSJsE_mIQmRG8V2aoGZLLlKm5_B-ZqmZ4nteJIG3eQ/viewform?usp=publish-editor" target="_blank" rel="noopener">this form</a>.
+          </p>
+          </p>
         </div>
-        <div class="card organizer-card">
-          <a href="#" class="clickable-image">
-            <img src="./organizers/tw.png" alt="Ting Wang" class="organizer-img">
-          </a>
-          <div class="card-body">
-            <span class="organizer-name">Ting Wang</span>
-            <small>Stony Brook University</small>
+      </div>
+    </section>
+
+        <!-- ======= Schedule Section ======= -->
+    <section id="schedule" style="padding-top: 20px;">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Schedule</h2>
+        </div>
+
+        <div class="table-responsive">
+          <table class="schedule-table table align-middle">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Session</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="time">09:00–09:05</td>
+                <td>Opening remarks</td>
+              </tr>
+              <tr>
+                <td class="time">09:05–09:35</td>
+                <td>Invited talk I & Q&amp;A</td>
+              </tr>
+              <tr>
+                <td class="time">09:35–10:05</td>
+                <td>Invited talk II & Q&amp;A</td>
+              </tr>
+              <tr>
+                <td class="time">10:05–10:35</td>
+                <td>Contributed session I</td>
+              </tr>
+              <tr>
+                <td class="time">10:35–11:05</td>
+                <td>Poster Session & Coffee break</td>
+              </tr>
+              <tr>
+                <td class="time">11:05–11:35</td>
+                <td>Invited talk III & Q&amp;A</td>
+              </tr>
+              <tr>
+                <td class="time">11:35–12:00</td>
+                <td>Contributed session II</td>
+              </tr>
+              <tr>
+                <td class="time">12:00–12:30</td>
+                <td>Panel discussion</td>
+              </tr>
+              <tr>
+                <td class="time">12:30–12:35</td>
+                <td>Closing remarks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-- End Schedule Section -->
+
+    <section id="speakers" class="pb-5 mb-4">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Invited Speakers</h2>
+          <p style="font-size: 18px;">To be announced.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Accepted Papers (Temporarily Hidden) =======
+    <section id="accepted-paper" class="section-with-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Accepted Papers</h2>
+        </div>
+        <div id="poster-presentations">
+          <ul id="posterList"></ul>
+        </div>
+      </div>
+    </section>
+    ======= End Accepted Papers ======= -->
+
+
+    <section id="organizers" class="pb-5 mb-4">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Organizers</h2>
+        </div>
+        <div class="flex-row-wrap">
+          <div class="card organizer-card">
+            <a href="https://louise-lulin.github.io/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/organizers/ll.jpg" alt="Lu Lin" class="organizer-img">
+            </a>
+            <div class="card-body">
+              <span class="organizer-name">Lu Lin</span>
+              <small>Penn State University</small>
+            </div>
           </div>
-        </div>
-        <div class="card organizer-card">
-          <a href="#" class="clickable-image">
-            <img src="./organizers/jk.jpg" alt="Jian Kang" class="organizer-img">
-          </a>
-          <div class="card-body">
-            <span class="organizer-name">Jian Kang</span>
-            <small>MBZUAI</small>
+
+          <div class="card organizer-card">
+            <a href="https://jinghuichen.github.io/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/organizers/jhc.jpg" alt="Jinghui Chen" class="organizer-img">
+            </a>
+            <div class="card-body">
+              <span class="organizer-name">Jinghui Chen</span>
+              <small>Penn State University</small>
+            </div>
           </div>
-        </div>
-        <div class="card organizer-card">
-          <a href="#" class="clickable-image">
-            <img src="./organizers/cwx.jpg" alt="Chaowei Xiao" class="organizer-img">
-          </a>
-          <div class="card-body">
-            <span class="organizer-name">Chaowei Xiao</span>
-            <small>JHU &amp; Nvidia</small>
+
+          <div class="card organizer-card">
+            <a href="https://alps-lab.github.io/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/organizers/tw.png" alt="Ting Wang" class="organizer-img">
+            </a>
+            <div class="card-body">
+              <span class="organizer-name">Ting Wang</span>
+              <small>Stony Brook University</small>
+            </div>
           </div>
-        </div>
-        <div class="card organizer-card">
-          <a href="#" class="clickable-image">
-            <img src="./organizers/jyz.jpeg" alt="Jieyu Zhao" class="organizer-img">
-          </a>
-          <div class="card-body">
-            <span class="organizer-name">Jieyu Zhao</span>
-            <small>USC</small>
+
+          <div class="card organizer-card">
+            <a href="https://jyzhao.net/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/organizers/jyz.jpeg" alt="Jieyu Zhao" class="organizer-img">
+            </a>
+            <div class="card-body">
+              <span class="organizer-name">Jieyu Zhao</span>
+              <small>USC</small>
+            </div>
           </div>
-        </div>
-        <div class="card organizer-card">
-          <a href="#" class="clickable-image">
-            <img src="./organizers/mj.jpeg" alt="Michael Johnston" class="organizer-img">
-          </a>
-          <div class="card-body">
-            <span class="organizer-name">Michael Johnston</span>
-            <small>Amazon</small>
+
+          <div class="card organizer-card">
+            <a href="https://xiaocw11.github.io/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/organizers/cwx.jpg" alt="Chaowei Xiao" class="organizer-img">
+            </a>
+            <div class="card-body">
+              <span class="organizer-name">Chaowei Xiao</span>
+              <small>JHU &amp; Nvidia</small>
+            </div>
+          </div>
+          
+          <div class="card organizer-card">
+            <a href="https://jiank2.github.io/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/organizers/jk.jpg" alt="Jian Kang" class="organizer-img">
+            </a>
+            <div class="card-body">
+              <span class="organizer-name">Jian Kang</span>
+              <small>MBZUAI</small>
+            </div>
+          </div>
+
+          <div class="card organizer-card">
+            <a href="https://www.linkedin.com/in/mjrjohnston/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/organizers/mj.jpeg" alt="Michael Johnston" class="organizer-img">
+            </a>
+            <div class="card-body">
+              <span class="organizer-name">Michael Johnston</span>
+              <small>Amazon</small>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <center>
-    <p>
-      <strong>Contact:</strong> <a href="mailto:kdd2026-set-llm@googlegroups.com">kdd2026-set-llm@googlegroups.com</a>
-    </p>
-    <p>
-      <em>Last updated April 28, 2026</em>
-    </p>
-  </center>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; 2026 SeT-LLM Workshop (KDD 2026).
+      </div>
+      <div class="credits">
+        Layout based on <a href="https://pila26-workshop.github.io/#" target="_blank" rel="noopener">PILA'26 workshop template</a>.
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script> 
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- ======= Accepted Papers Script (Temporarily Hidden) =======
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const list = document.getElementById('posterList');
+      if (!list) return;
+
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function parseCsv(text) {
+        const rows = [];
+        let row = [];
+        let field = '';
+        let inQuotes = false;
+
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i];
+
+          if (inQuotes) {
+            if (c === '"') {
+              const next = text[i + 1];
+              if (next === '"') {
+                field += '"';
+                i++;
+              } else {
+                inQuotes = false;
+              }
+            } else {
+              field += c;
+            }
+            continue;
+          }
+
+          if (c === '"') {
+            inQuotes = true;
+          } else if (c === ',') {
+            row.push(field);
+            field = '';
+          } else if (c === '\n') {
+            row.push(field);
+            rows.push(row);
+            row = [];
+            field = '';
+          } else if (c !== '\r') {
+            field += c;
+          }
+        }
+
+        if (field.length || row.length) {
+          row.push(field);
+          rows.push(row);
+        }
+
+        return rows;
+      }
+
+      function normalizeAuthors(authorsRaw) {
+        const raw = (authorsRaw || '').trim();
+        if (!raw) return '';
+        return raw
+          .split(';')
+          .map(function (s) { return s.trim(); })
+          .filter(Boolean)
+          .join(', ');
+      }
+
+      function fetchFirstOk(urls) {
+        return Promise.resolve().then(function () {
+          return urls.reduce(function (p, url) {
+            return p.catch(function () {
+              return fetch(url).then(function (r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status + ' for ' + url);
+                return r.text();
+              });
+            });
+          }, Promise.reject(new Error('no urls attempted')));
+        });
+      }
+
+      fetchFirstOk(['accepted_papers.csv', 'accepted_paper.csv'])
+        .then(function (csvText) {
+          const rows = parseCsv(csvText);
+          rows.slice(1).forEach(function (cols) {
+            const titleRaw = (cols && cols[1]) ? cols[1] : '';
+            const authorsRaw = (cols && cols[3]) ? cols[3] : '';
+
+            const title = titleRaw.replace(/\s+/g, ' ').trim();
+            const authors = normalizeAuthors(authorsRaw);
+            if (!title) return;
+
+            const li = document.createElement('li');
+            li.innerHTML = '<b>' + escapeHtml(title) + '</b><br>' + escapeHtml(authors);
+            list.appendChild(li);
+            list.appendChild(document.createElement('br'));
+          });
+        })
+        .catch(function (err) {
+          console.error('Error loading accepted papers CSV:', err);
+        });
+    });
+  </script>
+  ======= End Accepted Papers Script ======= -->
+
 </body>
+
 </html>
