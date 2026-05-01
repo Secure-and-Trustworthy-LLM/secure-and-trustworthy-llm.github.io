@@ -735,7 +735,7 @@ h6 {
 # About Section
 --------------------------------------------------------------*/
 #about {
-  background: url("../img/about-bg.jpg");
+  background: url("../img/background.jpeg");
   background-size: cover;
   overflow: hidden;
   position: relative;
@@ -751,17 +751,13 @@ h6 {
 
 #about:before {
   content: "";
-  background: linear-gradient(
-    125deg,
-    rgb(var(--pila-navy-rgb) / 0.88) 0%,
-    rgb(20 48 62 / 0.78) 55%,
-    rgb(22 62 72 / 0.65) 100%
-  );
+  background: rgba(29, 76, 123, 0.9);
   position: absolute;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 
 #about h2 {
