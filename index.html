@@ -43,6 +43,7 @@
       text-align: center;
     }
 
+    .speaker-img,
     .organizer-img {
       width: 100%;
       max-width: 200px;
@@ -52,6 +53,7 @@
       margin: 0 auto;
     }
 
+    .speaker-name,
     .organizer-name {
       display: block;
       margin-top: 0.4rem;
@@ -82,6 +84,7 @@
     }
 
     @media (max-width: 576px) {
+      .speaker-name,
       .organizer-name {
         white-space: normal;
       }
@@ -191,7 +194,7 @@
               </li>
               <li>
                 <span class="date-label">Workshop time</span>
-                <span class="date-value">10&nbsp;August&nbsp;2026 (Jeju Time, GMT+9)</span>
+                <span class="date-value">10&nbsp;August&nbsp;2026, 8am-12pm (Jeju Time, GMT+9)</span>
               </li>
             </ul>
           </div>
@@ -229,6 +232,57 @@
       </div>
     </section>
 
+    <section id="speakers" class="pb-5 mb-4">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Invited Speakers</h2>
+        </div>
+        <div class="flex-row-wrap">
+
+          <div class="card speaker-card">
+            <a href="https://tianzheng4.github.io/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/speakers/thz.jpg" alt="Tianhang Zheng" class="speaker-img">
+            </a>
+            <div class="card-body">
+              <span class="speaker-name">Tianhang Zheng</span>
+              <small>Zhejiang University</small>
+            </div>
+          </div>
+
+          <div class="card speaker-card">
+            <a href="https://www.cs.emory.edu/~kshu5/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/speakers/sk.png" alt="Kai Shu" class="speaker-img">
+            </a>
+            <div class="card-body">
+              <span class="speaker-name">Kai Shu</span>
+              <small>Emory University</small>
+            </div>
+          </div>
+
+          <div class="card speaker-card">
+            <a href="https://sites.nd.edu/xiangliang-zhang/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/speakers/xlz.jpg" alt="Xiangliang Zhang" class="speaker-img">
+            </a>
+            <div class="card-body">
+              <span class="speaker-name">Xiangliang Zhang</span>
+              <small>University of Notre Dame</small>
+            </div>
+          </div>
+
+          <div class="card speaker-card">
+            <a href="https://cse.hkust.edu.hk/~yqsong/" class="clickable-image" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/speakers/yqs.jpg" alt="Yangqiu Song" class="speaker-img">
+            </a>
+            <div class="card-body">
+              <span class="speaker-name">Yangqiu Song</span>
+              <small>HKUST</small>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
         <!-- ======= Schedule Section ======= -->
     <section id="schedule" style="padding-top: 20px;">
       <div class="container" data-aos="fade-up">
@@ -246,40 +300,86 @@
             </thead>
             <tbody>
               <tr>
-                <td class="time">09:00–09:05</td>
-                <td>Opening remarks</td>
+                <td class="time">08:05–08:10</td>
+                <td>Opening Remarks</td>
               </tr>
               <tr>
-                <td class="time">09:05–09:35</td>
-                <td>Invited talk I & Q&amp;A</td>
+                <td class="time">08:10–08:45</td>
+                <td>
+                  <div class="schedule-talk">
+                    <img src="assets/img/speakers/thz.jpg" alt="Tianhang Zheng" class="schedule-speaker-img">
+                    <div class="schedule-talk-details">
+                      <span>Invited Talk by <strong>Tianhang Zheng</strong> (Zhejiang University)</span>
+                      <small class="schedule-talk-title">LLM Safety Preservation After Alignment </small>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td class="time">09:35–10:05</td>
-                <td>Invited talk II & Q&amp;A</td>
+                <td class="time">08:45–09:20</td>
+                <td>
+                  <div class="schedule-talk">
+                    <img src="assets/img/speakers/sk.png" alt="Kai Shu" class="schedule-speaker-img">
+                    <div class="schedule-talk-details">
+                      <span>Invited Talk by <strong>Kai Shu</strong> (Emory University)</span>
+                      <small class="schedule-talk-title">Beyond Alignment: Inference-Time Steering for Secure and Trustworthy LLMs</small>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td class="time">10:05–10:35</td>
-                <td>Contributed session I</td>
+                <td class="time">09:20–10:00</td>
+                <td>Poster Session & Coffee Break</td>
               </tr>
               <tr>
-                <td class="time">10:35–11:05</td>
-                <td>Poster Session & Coffee break</td>
+                <td class="time">10:00–10:45</td>
+                <td>Contributed Paper Presentations
+                  <ol class="contributed-talk-list">
+                    <li>
+                      <div class="contributed-talk-title">Readable ≠ Steerable: Why Probe-Derived Context-Trust Directions Fail as Reliable RAG Control Surfaces</div>
+                      <div class="contributed-talk-authors">Rahul Sharma</div>
+                      <div class="contributed-talk-institution">JazzX AI</div>
+                    </li>
+                    <li>
+                      <div class="contributed-talk-title">Risk Is Not Review Value: Wrong-Answer Exposure Under Bounded Review Budgets</div>
+                      <div class="contributed-talk-authors">SangJin Park, Myungsub Choi, Jineok Kim, Minseung Kang</div>
+                      <div class="contributed-talk-institution">Tynapse</div>
+                    </li>
+                    <li>
+                      <div class="contributed-talk-title">Risk-Controlled Hallucination Detection for Financial RAG Agents</div>
+                      <div class="contributed-talk-authors">Rudransh Khera</div>
+                      <div class="contributed-talk-institution">University of California, Los Angeles</div>
+                    </li>
+                  </ol>
+                </td>
               </tr>
               <tr>
-                <td class="time">11:05–11:35</td>
-                <td>Invited talk III & Q&amp;A</td>
+                <td class="time">10:45–11:20</td>
+                <td>
+                  <div class="schedule-talk">
+                    <img src="assets/img/speakers/xlz.jpg" alt="Xiangliang Zhang" class="schedule-speaker-img">
+                    <div class="schedule-talk-details">
+                      <span>Invited Talk by <strong>Xiangliang Zhang</strong> (University of Notre Dame)</span>
+                      <small class="schedule-talk-title">Talk title to be announced</small>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td class="time">11:35–12:00</td>
-                <td>Contributed session II</td>
+                <td class="time">11:20–11:55</td>
+                <td>
+                  <div class="schedule-talk">
+                    <img src="assets/img/speakers/yqs.jpg" alt="Yangqiu Song" class="schedule-speaker-img">
+                    <div class="schedule-talk-details">
+                      <span>Invited Talk by <strong>Yangqiu Song</strong> (HKUST)</span>
+                      <small class="schedule-talk-title">Trustworthy AI through the Lens of Compliance </small>
+                    </div>
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td class="time">12:00–12:30</td>
-                <td>Panel discussion</td>
-              </tr>
-              <tr>
-                <td class="time">12:30–12:35</td>
-                <td>Closing remarks</td>
+                <td class="time">11:55–12:00</td>
+                <td>Closing Remarks</td>
               </tr>
             </tbody>
           </table>
@@ -287,15 +387,6 @@
       </div>
     </section>
     <!-- End Schedule Section -->
-
-    <section id="speakers" class="pb-5 mb-4">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h2>Invited Speakers</h2>
-          <p style="font-size: 18px;">To be announced.</p>
-        </div>
-      </div>
-    </section>
 
     <!-- ======= Accepted Papers (Temporarily Hidden) =======
     <section id="accepted-paper" class="section-with-bg">
