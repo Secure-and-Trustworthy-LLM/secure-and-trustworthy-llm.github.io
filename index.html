@@ -111,7 +111,7 @@
           <li><a class="nav-link scrollto" href="#cfp">Call for Papers</a></li>
           <li><a class="nav-link scrollto" href="#speakers">Speakers</a></li>
           <li><a class="nav-link scrollto" href="#schedule">Schedule</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#accepted-paper">Accepted Papers</a></li> -->
+          <li><a class="nav-link scrollto" href="#poster-papers">Poster Papers</a></li>
           <li><a class="nav-link scrollto" href="#organizers">Organizers</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -390,18 +390,40 @@
     </section>
     <!-- End Schedule Section -->
 
-    <!-- ======= Accepted Papers (Temporarily Hidden) =======
-    <section id="accepted-paper" class="section-with-bg">
+    <!-- ======= Poster Papers ======= -->
+    <section id="poster-papers" class="section-with-bg">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h2>Accepted Papers</h2>
+          <h2>Poster Papers</h2>
+          <p>
+            SeT-LLM&nbsp;'26 papers are non-archival workshop papers. They are made public by the workshop
+            without inclusion in the KDD 2026 conference proceedings.
+          </p>
         </div>
-        <div id="poster-presentations">
-          <ul id="posterList"></ul>
+        <div class="cfp-block">
+          <h3 style="text-transform: none;">
+            Cognitive Immunity for Trustworthy LLM Agents: Auditable Failure Memory Against Repeated Safety Errors
+          </h3>
+          <p class="cfp-body"><strong>Mian Zhang</strong></p>
+          <p class="cfp-body">
+            <span class="badge bg-secondary">Poster</span>
+            <span class="badge bg-light text-dark">Non-archival workshop paper</span>
+          </p>
+          <p class="cfp-body">
+            <a href="https://openreview.net/forum?id=eiw7dgCNad" target="_blank" rel="noopener noreferrer">Official OpenReview record</a>
+            &nbsp;·&nbsp;
+            <a href="https://openreview.net/pdf?id=eiw7dgCNad" target="_blank" rel="noopener noreferrer">OpenReview PDF</a>
+            &nbsp;·&nbsp;
+            <a href="https://mianzhang.org/papers/kdd-2026/mian-zhang-kdd-2026-cognitive-immunity.pdf" target="_blank" rel="noopener noreferrer">Author-hosted PDF</a>
+          </p>
+          <p class="cfp-body">
+            See the
+            <a href="https://openreview.net/group?id=KDD.org/2026/Workshop/SeT-LLM#tab-accept-poster" target="_blank" rel="noopener noreferrer">complete accepted-poster list on OpenReview</a>.
+          </p>
         </div>
       </div>
     </section>
-    ======= End Accepted Papers ======= -->
+    <!-- End Poster Papers -->
 
 
     <section id="organizers" class="pb-5 mb-4">
@@ -508,115 +530,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- ======= Accepted Papers Script (Temporarily Hidden) =======
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const list = document.getElementById('posterList');
-      if (!list) return;
-
-      function escapeHtml(str) {
-        return String(str)
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-      }
-
-      function parseCsv(text) {
-        const rows = [];
-        let row = [];
-        let field = '';
-        let inQuotes = false;
-
-        for (let i = 0; i < text.length; i++) {
-          const c = text[i];
-
-          if (inQuotes) {
-            if (c === '"') {
-              const next = text[i + 1];
-              if (next === '"') {
-                field += '"';
-                i++;
-              } else {
-                inQuotes = false;
-              }
-            } else {
-              field += c;
-            }
-            continue;
-          }
-
-          if (c === '"') {
-            inQuotes = true;
-          } else if (c === ',') {
-            row.push(field);
-            field = '';
-          } else if (c === '\n') {
-            row.push(field);
-            rows.push(row);
-            row = [];
-            field = '';
-          } else if (c !== '\r') {
-            field += c;
-          }
-        }
-
-        if (field.length || row.length) {
-          row.push(field);
-          rows.push(row);
-        }
-
-        return rows;
-      }
-
-      function normalizeAuthors(authorsRaw) {
-        const raw = (authorsRaw || '').trim();
-        if (!raw) return '';
-        return raw
-          .split(';')
-          .map(function (s) { return s.trim(); })
-          .filter(Boolean)
-          .join(', ');
-      }
-
-      function fetchFirstOk(urls) {
-        return Promise.resolve().then(function () {
-          return urls.reduce(function (p, url) {
-            return p.catch(function () {
-              return fetch(url).then(function (r) {
-                if (!r.ok) throw new Error('HTTP ' + r.status + ' for ' + url);
-                return r.text();
-              });
-            });
-          }, Promise.reject(new Error('no urls attempted')));
-        });
-      }
-
-      fetchFirstOk(['accepted_papers.csv', 'accepted_paper.csv'])
-        .then(function (csvText) {
-          const rows = parseCsv(csvText);
-          rows.slice(1).forEach(function (cols) {
-            const titleRaw = (cols && cols[1]) ? cols[1] : '';
-            const authorsRaw = (cols && cols[3]) ? cols[3] : '';
-
-            const title = titleRaw.replace(/\s+/g, ' ').trim();
-            const authors = normalizeAuthors(authorsRaw);
-            if (!title) return;
-
-            const li = document.createElement('li');
-            li.innerHTML = '<b>' + escapeHtml(title) + '</b><br>' + escapeHtml(authors);
-            list.appendChild(li);
-            list.appendChild(document.createElement('br'));
-          });
-        })
-        .catch(function (err) {
-          console.error('Error loading accepted papers CSV:', err);
-        });
-    });
-  </script>
-  ======= End Accepted Papers Script ======= -->
 
 </body>
 
