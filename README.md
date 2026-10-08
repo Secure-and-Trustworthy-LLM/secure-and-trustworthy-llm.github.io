@@ -15,7 +15,7 @@ The workshop is scheduled for **9–13 August 2026** on **Jeju Island, Republic 
 - `assets/js/main.js` — template JavaScript for navigation and scrolling behavior
 - `assets/vendor/` — third-party libraries used by the site (Bootstrap, AOS, GLightbox, Swiper, etc.)
 - `assets/img/` — site images, favicons, and organizer photos
-- The poster-paper record is maintained directly in `index.html` and links to the authoritative OpenReview record.
+- The accepted-papers section links to the public SeT-LLM venue record on OpenReview.
 
 ## Notes
 
